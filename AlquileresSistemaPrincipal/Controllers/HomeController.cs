@@ -84,7 +84,7 @@ public class HomeController : Controller
 
     private async Task<ClimaDto> ObtenerClimaActual(string ciudad)
     {
-        string apiKey = "fbfe37c41642d87caf70f39bd88cfb92"; // Sustituye con tu API KEY real
+        string apiKey = "fbfe37c41642d87caf70f39bd88cfb92"; 
         string url = $"https://api.openweathermap.org/data/2.5/weather?q={ciudad}&appid={apiKey}&lang=es";
 
         using var client = new HttpClient();
