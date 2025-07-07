@@ -1,0 +1,26 @@
+﻿@model AlquileresSistemaPrincipal.Models.PropiedadDto
+
+<h1>@Model.Nombre</h1>
+
+<img src="@Model.ImagenUrl" alt="Imagen de @Model.Nombre" width="400" />
+
+<p><strong>Dirección:</strong> @Model.Direccion</p>
+<p><strong>Descripción:</strong> @Model.Descripcion</p>
+<p><strong>Precio:</strong> ₡@Model.Precio</p>
+
+@if (ViewBag.Clima != null)
+{
+    <div class="mt-3 p-3 border rounded bg-light">
+        <h4>Clima actual en @Model.Direccion</h4>
+        <p><strong>@ViewBag.Clima.Main</strong> - @ViewBag.Clima.Description</p>
+        <p>Temperatura: @((ViewBag.Clima.Temperature - 273.15).ToString("0.0")) °C</p>
+    </div>
+}
+else
+{
+    <p>No se pudo obtener el clima actual.</p>
+}
+
+
+<a asp-action="Index">Volver a la lista</a>
+
